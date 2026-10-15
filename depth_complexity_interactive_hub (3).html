@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dallas ISD: Depth & Complexity Virtual Teacher Training</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #003366;
+      --primary-dark: #002244;
+      --secondary: #008080;
+      --accent: #e67e22;
+      --bg: #f8fafc;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen selection:bg-teal-500 selection:text-white">
+
+  <!-- Top Navigation Header -->
+  <header class="bg-[#003366] text-white px-4 py-3 sticky top-0 z-50 shadow-md">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-teal-500/20 border border-teal-400/40 flex items-center justify-center font-bold text-teal-300 text-sm">
+          DISD
+        </div>
+        <div>
+          <h1 class="text-sm sm:text-base font-bold tracking-tight leading-tight">Depth &amp; Complexity</h1>
+          <p class="text-xs text-slate-300 hidden sm:block">Virtual Teacher Training • Quarter 2 Math &amp; Carnegie HQIM</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span id="badge-icon" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-sm border border-amber-400">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          <span id="badge-icon-text">Assigned: Patterns</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 flex flex-col justify-center">
+
+    <!-- STEP 1: Welcome Screen -->
+    <section id="view-welcome" class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 sm:p-10 text-center max-w-2xl mx-auto w-full transition-all">
+      <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-teal-100 shadow-inner text-2xl font-bold">
+        ❖
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[#003366] tracking-tight mb-3">
+        Depth and Complexity in the Curriculum
+      </h2>
+      <p class="text-xs sm:text-sm font-semibold text-teal-700 tracking-wide uppercase mb-2">
+        Virtual Teacher Training • Dallas ISD Mathematics
+      </p>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+        Welcome educators! This digital workshop companion guides you through our Quarter 2 mathematics curriculum, Carnegie problem types, CBLI engagement routines, and Depth &amp; Complexity inquiry prompts.
+      </p>
+
+      <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 sm:p-5 text-left mb-6 text-sm text-slate-700">
+        <h3 class="font-bold text-[#003366] mb-2 flex items-center gap-2">
+          <svg class="w-4 h-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          Virtual Engagement Routines Included
+        </h3>
+        <ul class="space-y-1.5 list-disc list-inside text-slate-600 pl-1">
+          <li><strong>Total Physical Response (TPR):</strong> Camera hand gestures for Depth and Complexity</li>
+          <li><strong>Four-Finger Webcam Scale:</strong> Real-time icon classification (1 to 4)</li>
+          <li><strong>Virtual Turn &amp; Talk:</strong> Breakout pair reflection on Q2 model lessons</li>
+          <li><strong>Make Your Mark:</strong> Targeted exploration of Carnegie HQIM tasks</li>
+          <li><strong>Virtual 4 Corners:</strong> Implementation reflection &amp; breakout matchmaking</li>
+        </ul>
+      </div>
+
+      <button id="btn-start" type="button" class="w-full sm:w-auto px-8 py-3.5 bg-[#003366] hover:bg-[#002244] active:scale-[0.98] text-white font-semibold rounded-xl shadow-md shadow-blue-900/10 transition flex items-center justify-center gap-2 mx-auto text-base">
+        <span>Enter Virtual Presentation Deck</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </button>
+    </section>
+
+    <!-- STEP 2: Presentation & Activity Deck -->
+    <section id="view-deck" class="hidden flex flex-col gap-5 w-full">
+
+      <!-- Slide Meta Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+        <div>
+          <span id="slide-category" class="text-xs uppercase font-bold tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-200/60 inline-block mb-1">
+            Framework Overview
+          </span>
+          <h2 id="slide-title" class="text-lg sm:text-xl font-bold text-[#003366]">Slide Title</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="slide-progress" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
+            Slide 1 of 24
+          </span>
+        </div>
+      </div>
+
+      <!-- Slide Visual Stage Container -->
+      <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+        
+        <!-- Visual Display Window -->
+        <div class="relative w-full bg-slate-900 min-h-[220px] sm:min-h-[300px] flex items-center justify-center overflow-hidden">
+          
+          <!-- Image Element (with graceful fallback to graphic card) -->
+          <img id="slide-image" class="hidden w-full h-auto max-h-[420px] object-contain mx-auto" alt="Slide Graphic" src="" />
+          
+          <!-- Fallback Graphic Card (shown when slide image is loading or absent) -->
+          <div id="slide-graphic-card" class="w-full p-6 sm:p-10 flex flex-col items-center justify-center text-center text-white bg-gradient-to-br from-slate-900 via-[#002244] to-slate-900 min-h-[220px] sm:min-h-[300px]">
+            <div id="graphic-icon-box" class="w-12 h-12 rounded-xl bg-teal-500/20 border border-teal-400/30 text-teal-300 flex items-center justify-center text-2xl font-bold mb-3">
+              ❖
+            </div>
+            <h3 id="graphic-headline" class="text-xl sm:text-2xl font-bold text-white mb-2 max-w-lg">
+              Depth and Complexity in the Curriculum
+            </h3>
+            <p id="graphic-subtext" class="text-slate-300 text-xs sm:text-sm max-w-md leading-relaxed">
+              Dallas ISD Mathematics • Virtual Teacher Training
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide Body Text -->
+        <div class="p-5 sm:p-6 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-100" id="slide-body-content">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Virtual Facilitator Script Drawer -->
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+          <div class="bg-blue-50/70 border-l-4 border-[#003366] rounded-r-xl p-3.5 sm:p-4 text-xs sm:text-sm text-slate-700">
+            <span class="font-bold text-[#003366] block uppercase tracking-wider text-[11px] mb-1">
+              Virtual Facilitator Script &amp; Camera Routine
+            </span>
+            <div id="slide-note-content" class="leading-relaxed text-slate-600">
+              <!-- Injected note -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Checkpoint Card (Active Pause Points) -->
+      <div id="activity-container" class="hidden bg-teal-50/60 border-2 border-teal-400/80 rounded-2xl p-5 sm:p-6 shadow-sm transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-bold">⚡</span>
+          <h3 id="activity-title" class="font-bold text-teal-900 text-base sm:text-lg">Activity Checkpoint</h3>
+        </div>
+        <p id="activity-prompt" class="text-xs sm:text-sm text-slate-700 mb-4 leading-relaxed"></p>
+
+        <!-- Dynamic Controls -->
+        <div id="activity-controls" class="space-y-3"></div>
+
+        <!-- Feedback Box -->
+        <div id="activity-feedback" class="hidden mt-3 p-3 rounded-xl bg-white border border-teal-300 text-xs sm:text-sm text-teal-900 font-medium"></div>
+      </div>
+
+      <!-- Deck Navigation Bar -->
+      <div class="flex items-center justify-between gap-3 pt-2">
+        <button id="btn-prev" type="button" class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-semibold text-sm shadow-sm transition disabled:opacity-40 disabled:cursor-not-allowed">
+          ← Previous
+        </button>
+
+        <div class="text-xs text-slate-400 text-center hidden sm:block">
+          Use buttons or keyboard Arrow Left / Right
+        </div>
+
+        <button id="btn-next" type="button" class="px-6 py-2.5 rounded-xl bg-[#003366] hover:bg-[#002244] active:scale-[0.98] text-white font-semibold text-sm shadow-sm transition disabled:opacity-40 disabled:cursor-not-allowed">
+          Next Slide →
+        </button>
+      </div>
+
+    </section>
+
+    <!-- STEP 3: Workshop Closing & Attendance Sign-Off -->
+    <section id="view-closing" class="hidden bg-white border border-slate-200 shadow-sm rounded-2xl p-6 sm:p-10 max-w-2xl mx-auto w-full transition-all">
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-teal-100 shadow-inner text-3xl font-bold">
+          🎓
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#003366] tracking-tight mb-2">
+          Workshop Attendance &amp; Sign-Off
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
+          Thank you for completing the Virtual Teacher Training session! Please submit your details below to verify attendance and complete your exit ticket.
+        </p>
+      </div>
+
+      <!-- Attendance Input Form -->
+      <div id="closing-form-card" class="space-y-4">
+        <div>
+          <label for="close-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Full Name <span class="text-rose-500">*</span>
+          </label>
+          <input type="text" id="close-name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm font-sans" placeholder="e.g., Maria Hernandez" required>
+        </div>
+
+        <div>
+          <label for="close-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Dallas ISD Email Address <span class="text-rose-500">*</span>
+          </label>
+          <input type="email" id="close-email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm font-sans" placeholder="e.g., mhernandez@dallasisd.org" required>
+        </div>
+
+        <div>
+          <label for="close-campus" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            School / Campus Name (Optional)
+          </label>
+          <input type="text" id="close-campus" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm font-sans" placeholder="e.g., Thomas Jefferson High School">
+        </div>
+
+        <!-- Inline error alert -->
+        <div id="closing-error-msg" class="hidden p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium"></div>
+
+        <button id="btn-submit-closing" type="button" class="w-full py-3.5 bg-teal-700 hover:bg-teal-800 active:scale-[0.98] text-white font-semibold rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm sm:text-base mt-2">
+          <span>Record Attendance &amp; Close Session</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+        </button>
+      </div>
+
+      <!-- Success Confirmation Card -->
+      <div id="closing-success-card" class="hidden text-center space-y-4 pt-2">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          Virtual Training Documented
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-left text-xs sm:text-sm space-y-2 text-slate-700">
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="font-medium text-slate-500">Participant:</span>
+            <span id="recap-name" class="font-bold text-slate-900">--</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="font-medium text-slate-500">Email:</span>
+            <span id="recap-email" class="font-bold text-slate-900">--</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="font-medium text-slate-500">Campus:</span>
+            <span id="recap-campus" class="font-semibold text-slate-800">--</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-200 pb-1.5">
+            <span class="font-medium text-slate-500">Assigned Icon Lens:</span>
+            <span id="recap-icon" class="font-semibold text-teal-700">--</span>
+          </div>
+          <div class="flex justify-between pt-0.5">
+            <span class="font-medium text-slate-500">Timestamp:</span>
+            <span id="recap-timestamp" class="text-slate-600">--</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+          <button id="btn-download-slip" type="button" class="flex-1 py-2.5 px-4 bg-[#003366] hover:bg-[#002244] text-white text-xs sm:text-sm font-semibold rounded-xl transition shadow-sm flex items-center justify-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download Verification Slip
+          </button>
+          <button id="btn-export-all" type="button" class="py-2.5 px-4 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-semibold rounded-xl transition">
+            Export All Attendance (CSV)
+          </button>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100">
+          <button id="btn-restart-session" type="button" class="text-xs text-slate-500 hover:text-slate-800 underline">
+            Return to Welcome Screen
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Message Overlay -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xl border border-slate-700">
+    <span id="toast-text">Message</span>
+  </div>
+
+  <footer class="mt-auto py-4 text-center text-xs text-slate-400 border-t border-slate-200/60 bg-white">
+    Dallas Independent School District • Mathematics Curriculum &amp; Instruction Virtual Training
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      let currentSlide = 0;
+      let assignedIcon = "";
+
+      const icons = [
+        "1: Patterns",
+        "2: Rules",
+        "3: Language",
+        "4: Disciplines"
+      ];
+
+      // Exact 24 Slides from "Depth and Complexity in the Curriculum: Virtual Teacher Training"
+      const deck = [
+        {
+          title: "Depth and Complexity in the Curriculum",
+          category: "Curriculum Integration",
+          symbol: "❖",
+          headline: "Integrating into Quarter 2 Math & Carnegie Learning HQIM",
+          subtext: "Dallas ISD Mathematics Curriculum & Instruction",
+          body: "<p class='mb-2'>In our Dallas ISD curriculum, we use the Instructional Planning Calendar, or IPC, to see where these opportunities live.</p><p class='text-sm text-slate-600'>If you look at your IPC for Quarter 2, you’ll see Math lessons from our HQIM, concrete experiences, and CBLI engagement strategies already mapped out. We want to take a closer look at these lessons to identify where we can highlight Depth and Complexity icons.</p>",
+          note: "<strong>VIRTUAL FACILITATOR NOTE:</strong><br>SAY: \"In our Dallas ISD curriculum, we use the Instructional Planning Calendar, or IPC, to see where these opportunities live. If you look at your IPC for Quarter 2, you’ll see Math lessons from our HQIM, concrete experiences, and CBLI engagement strategies already mapped out. We want to take a closer look at these lessons to identify where we can highlight Depth and Complexity icons. Please have your virtual chat box open and your cameras turned on for our interactive checks.\"",
+          act: null
+        },
+        {
+          title: "Energizer: Thinking Beyond the Word",
+          category: "Virtual Warm-Up",
+          symbol: "⚡",
+          headline: "Collaborative Synthesis: 'Depth and Complexity is...'",
+          subtext: "Constructing group definitions",
+          body: "<p class='mb-2 font-medium text-slate-800'>Write every word, phrase, or image you know or think about the concept of Depth or Complexity:</p><div class='grid grid-cols-2 gap-3 mt-3 text-xs sm:text-sm'><div class='p-3 bg-blue-50 border border-blue-200 rounded-xl text-center'><span class='text-base font-bold text-blue-900 block mb-0.5'>Ⓓ DEPTH</span>Exploration going beyond basic facts</div><div class='p-3 bg-teal-50 border border-teal-200 rounded-xl text-center'><span class='text-base font-bold text-teal-900 block mb-0.5'>Ⓒ COMPLEXITY</span>Examining relationships &amp; perspectives</div></div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Let's zoom out and look at the Depth and Complexity framework. As a group, select either the word 'depth' or 'complexity' and write down in the chat or on our shared virtual whiteboard every word, phrase, or image you associate with it. Then, we will synthesize our collective thoughts to complete the statement: 'Depth and Complexity is...'\"",
+          act: {
+            type: "text",
+            title: "⚡ Energizer Chat / Whiteboard Entry",
+            prompt: "Type words, phrases, or associations for Depth or Complexity:",
+            btnText: "Log Virtual Response",
+            feedback: "Responses logged! Depth delves inward into root concepts; Complexity extends outward into systemic relationships."
+          }
+        },
+        {
+          title: "Depth and Complexity",
+          category: "Framework Foundations",
+          symbol: "🎯",
+          headline: "Purpose of the Framework",
+          subtext: "Critical thinking, differentiation & deep understanding",
+          body: "<p class='text-base font-medium text-slate-800 mb-3'>The Depth &amp; Complexity Framework encourages students to think critically. It also differentiates and deepens student understanding of content.</p><div class='space-y-2 text-sm'><div class='p-3 bg-slate-50 border border-slate-200 rounded-xl'><strong>Ⓓ Depth:</strong> Exploration of content that goes beyond facts and basic concepts.</div><div class='p-3 bg-slate-50 border border-slate-200 rounded-xl'><strong>Ⓒ Complexity:</strong> Extension of content by examining relationships, change, and perspectives.</div></div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"[Refer to the Depth and Complexity Icon posters] Here is how we define depth and complexity within the depth and complexity framework. The framework encourages students to think critically. It also differentiates and deepens student understanding of content. [Click and continue reading the definitions].\"",
+          act: null
+        },
+        {
+          title: "Carnegie Problem Types • CBLI Strategy: TPR",
+          category: "CBLI Strategy: TPR",
+          symbol: "✋",
+          headline: "Total Physical Response (Webcam Routine)",
+          subtext: "Gestures and movement to reinforce understanding",
+          body: "<p class='mb-2'>Carnegie lessons include a variety of problem types aimed at providing depth and complexity.</p><p class='text-sm mb-3'>Look at each problem type and determine if it aligns with the definition of depth, complexity, or both.</p><div class='grid grid-cols-2 gap-3 text-xs sm:text-sm'><div class='p-3 bg-slate-100 rounded-xl border border-slate-200'><strong>Ⓓ Gesture for Depth:</strong><br>Point hand downward towards the ground</div><div class='p-3 bg-slate-100 rounded-xl border border-slate-200'><strong>Ⓒ Gesture for Complexity:</strong><br>Interlock fingers / weave hands outwards</div></div>",
+          note: "<strong>VIRTUAL CAMERA ROUTINE:</strong><br>STRATEGY - TPR: (Gestures and movement to reinforce understanding). SAY: \"Use your hand on your webcam to show me how we indicate depth [wait for all to show the gesture]. Show me complexity [repeat]. I will present a different question type for you to classify. Wait to show me your gesture until I say: 'Three, two, one… show me.'\"",
+          act: {
+            type: "choice",
+            title: "✋ Practice Your Virtual TPR Gesture",
+            prompt: "Select the gesture you are preparing on webcam for 'Three, two, one… show me':",
+            opts: ["Ⓓ Depth (Point down)", "Ⓒ Complexity (Weave hands)", "Both Gestures"],
+            feedback: "Webcam gesture confirmed! Get ready to classify the upcoming Carnegie problem types."
+          }
+        },
+        {
+          title: "Problem Type: Worked Example",
+          category: "Carnegie Problem Type",
+          symbol: "📝",
+          headline: "Carnegie Structure: Worked Example Analysis",
+          subtext: "Making connections between steps • Alignment: Depth (Ⓓ)",
+          body: "<p class='mb-2'><strong>Carnegie Math: Step-by-Step Worked Example Model</strong></p><p class='text-sm text-slate-600 mb-3'>Students examine pre-solved equations to understand each intermediate mathematical step, analyze structural logic, and justify procedural rules.</p><div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-xs sm:text-sm'>Alignment: Ⓓ Depth (exploration of content that goes beyond facts and concepts)</div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Many lessons have worked examples. Worked examples aim at students making connections between steps. Based on our definitions for depth and complexity (refer to the word box above), which best fits the aim of worked examples? Take a few seconds to think about it... [wait a few seconds] Three, two, one… show me. [Wait for all participants to put up a gesture. Determine majority votes. Call on someone in the majority to explain why they chose that].\"",
+          act: {
+            type: "choice",
+            title: "Classify: Worked Examples",
+            prompt: "Which best fits the aim of worked examples?",
+            opts: ["Ⓓ Depth", "Ⓒ Complexity"],
+            feedback: "Worked examples prompt students to unpack procedural reasoning and deeper connections between steps."
+          }
+        },
+        {
+          title: "Problem Type: Thumbs Up / Down",
+          category: "Carnegie Problem Type",
+          symbol: "👍",
+          headline: "Carnegie Structure: Thumbs Up / Down Error Analysis",
+          subtext: "Error detection task • Alignment: Depth (Ⓓ)",
+          body: "<p class='mb-2'><strong>Error Detection Task:</strong> <em>“Is the student's solution mathematically sound?”</em></p><p class='text-sm text-slate-600 mb-3'>Students evaluate student-generated work, diagnose common mathematical misconceptions, verify adherence to mathematical rules, and validate solutions.</p><div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-xs sm:text-sm'>Alignment: Ⓓ Depth (delving into underlying misconceptions and constraints)</div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Carnegie also has thumbs up/down problems. These problems require students to look for errors and make connections between steps. Based on our definitions for depth and complexity (refer to the word box above), which best fits the aim of thumbs up/down problems? Take a few seconds to think about it... [wait a few seconds] Three, two, one… show me. [Wait for gestures, note majority, and call on a teacher to explain].\"",
+          act: {
+            type: "choice",
+            title: "Classify: Thumbs Up / Down",
+            prompt: "Which best fits the aim of thumbs up/down problems?",
+            opts: ["Ⓓ Depth", "Ⓒ Complexity"],
+            feedback: "Error analysis requires diagnosing boundary conditions and verifying adherence to mathematical rules."
+          }
+        },
+        {
+          title: "Problem Type: Who's Correct?",
+          category: "Carnegie Problem Type",
+          symbol: "👥",
+          headline: "Carnegie Structure: Multiple Perspectives & Approaches",
+          subtext: "Comparing student methods • Alignment: Complexity (Ⓒ)",
+          body: "<p class='mb-2'><strong>Whose strategy makes mathematical sense? Are both methods valid?</strong></p><p class='text-sm text-slate-600 mb-3'>Students compare multiple distinct solution methods presented by different peers (Student A vs. Student B). They determine if reasoning is valid, contrast approaches, and critique reasoning.</p><div class='p-3 bg-teal-50 border-l-4 border-teal-600 font-semibold text-slate-800 text-xs sm:text-sm'>Alignment: Ⓒ Complexity (examining relationships between diverse mathematical strategies)</div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Another type of problem requires students to determine who is correct. These problems require students to question the strategy by determining if the reasoning makes sense and determining errors. Based on our definitions for depth and complexity, which best fits the aim of 'Who’s Correct?' problems? Think about it... Three, two, one… show me. [Call on a participant to share].\"",
+          act: {
+            type: "choice",
+            title: "Classify: Who's Correct?",
+            prompt: "Which best fits comparing distinct peer solution methods?",
+            opts: ["Ⓓ Depth", "Ⓒ Complexity"],
+            feedback: "Contrasting multiple valid approaches examines conceptual relationships and perspectives."
+          }
+        },
+        {
+          title: "Problem Type: Thought Bubbles",
+          category: "Carnegie Problem Type",
+          symbol: "💭",
+          headline: "Carnegie Structure: Metacognitive Thought Bubbles",
+          subtext: "Activating connections • Alignment: Depth (Ⓓ) & Complexity (Ⓒ)",
+          body: "<p class='mb-2 italic text-slate-700'>“How does this relate to what we learned about linear rates last week?”</p><p class='text-sm text-slate-600 mb-3'>Provided to remind students about things previously learned, suggest diverse problem-solving strategies, share interesting facts, and guide student self-regulation.</p><div class='flex gap-3 text-xs sm:text-sm font-semibold'><span class='p-2 bg-blue-50 border border-blue-200 rounded-lg text-blue-900'>Ⓓ Depth: Root concepts</span><span class='p-2 bg-teal-50 border border-teal-200 rounded-lg text-teal-900'>Ⓒ Complexity: Interconnected topics</span></div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"The last are thought bubbles. Thought bubbles remind students about things previously learned, help them consider different strategies, or share connections. Based on our definitions, which best fits thought bubbles? Three, two, one… show me! [Many show both]. Exactly, they bridge both depth of inquiry and complexity of connections.\"",
+          act: {
+            type: "choice",
+            title: "Classify: Thought Bubbles",
+            prompt: "Which best fits thought bubbles that activate prior knowledge and self-regulation?",
+            opts: ["Ⓓ Depth", "Ⓒ Complexity", "Both Ⓓ & Ⓒ"],
+            feedback: "Thought bubbles serve as metacognitive bridges across both internal depth and outward connections."
+          }
+        },
+        {
+          title: "Straightforward Differentiation",
+          category: "Research Grounding",
+          symbol: "📖",
+          headline: "Straightforward Differentiation",
+          subtext: "Gifted Guild’s Guide to Depth and Complexity, 2020",
+          body: "<blockquote class='border-l-4 border-teal-600 pl-4 italic text-slate-700 my-2 text-sm sm:text-base'>“The Depth and Complexity Framework is a set of tools that allow teachers to differentiate, for any grade level or content area, in a way that is straightforward to implement and effective.”</blockquote><p class='text-xs sm:text-sm text-slate-600 mt-2'><strong>Key Takeaway:</strong> You do not have to recreate lessons. You simply use the prompts to help students think more deeply about what they are already learning.</p>",
+          note: "<strong>1 MIN REFLECTION / 1 MIN SCRIPT:</strong><br>SAY: \"The beauty of the Depth and Complexity framework is that it gives simple tools that work in any grade level or subject. You don’t have to recreate lessons. You can simply use the prompts to help students think more deeply about what they’re already learning. It makes differentiation more manageable because you’re not doing more, you’re just asking students to think in more powerful ways.\"",
+          act: null
+        },
+        {
+          title: "Depth & Complexity Icons",
+          category: "Visual Framework",
+          symbol: "🎨",
+          headline: "Curriculum Tools: Depth & Complexity Icons",
+          subtext: "A versatile toolkit designed to elevate and focus student thinking",
+          body: "<p class='text-sm sm:text-base'>Visual prompts act as cognitive catalysts that anchor and guide student discourse across mathematical topics.</p>",
+          note: "<strong>TRANSITION NOTE:</strong><br>SAY: \"Now let's examine the concrete visual prompts that power this entire framework: the Depth and Complexity icons.\"",
+          act: null
+        },
+        {
+          title: "The 11 Depth & Complexity Icons",
+          category: "Toolkit Overview",
+          symbol: "🧰",
+          headline: "Sandra Kaplan's 11 Prompts",
+          subtext: "Eleven visual tools for deep inquiry",
+          body: "<p class='mb-2'>Eleven Depth and Complexity icons can be used as tools to prompt students to delve deeper into the area of study and their thinking or thought process.</p><p class='text-xs sm:text-sm text-slate-600 mb-3'>These icons act as prompts, guiding students and educators alike toward more specific and complex understanding.</p><div class='p-3 bg-teal-50 border border-teal-200 rounded-xl text-xs text-teal-800 font-medium'>🔗 Digital Handout link shared in chat: <em>docs.google.com/.../DepthAndComplexityCards</em></div>",
+          note: "<strong>TOOLKIT OVERVIEW / DIGITAL HANDOUT SHARE:</strong><br>NOTE: Depth and Complexity Cards link: https://docs.google.com/presentation/d/1RdiiSy05pb5fK1nU1peUwGtuKS9oRVZIeZgvZV8PIcY/edit?usp=sharing<br>SAY: \"Think of the Depth and Complexity framework as a versatile toolkit designed to elevate student thinking. It utilizes a set of distinct visual icons, each representing a specific lens or pathway for deeper inquiry. I've placed the link to our digital cards in the chat so you can refer to them during today's session.\"",
+          act: null
+        },
+        {
+          title: "Today's 4 Target Icons",
+          category: "Focus Lens",
+          symbol: "🎯",
+          headline: "Let's Focus on These 4 Today",
+          subtext: "Patterns, Rules, Language, and Disciplines",
+          body: "<div class='grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm'>\
+                  <div class='p-3 bg-slate-50 border rounded-lg'><strong>⓵ Patterns:</strong> Encourages students to look for repetition and recurring cycles.</div>\
+                  <div class='p-3 bg-slate-50 border rounded-lg'><strong>⓶ Rules:</strong> Encourages students to look for organizational elements and structure.</div>\
+                  <div class='p-3 bg-slate-50 border rounded-lg'><strong>⓷ Language:</strong> Encourages students to use and analyze content vocabulary.</div>\
+                  <div class='p-3 bg-slate-50 border rounded-lg'><strong>⓸ Disciplines:</strong> Encourages students to make connections among many subjects.</div>\
+                </div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"For our purposes today, we will focus on only four of the icons. These four icons [read slide]. [Click - have a different person unmute and read each icon's purpose].\"",
+          act: null
+        },
+        {
+          title: "CBLI Strategy: Four Finger Scale",
+          category: "CBLI Strategy: Scale",
+          symbol: "🖐️",
+          headline: "Four Finger Scale (Camera Gestures)",
+          subtext: "Gesturing icon numbers 1 through 4",
+          body: "<p class='mb-2'>Look at the example problem from the curriculum. Determine which Depth and Complexity icon would apply:</p><div class='grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold text-center'><div class='p-2.5 bg-slate-100 rounded-lg border'>⓵ 1 Finger<br><span class='text-teal-700 font-semibold'>Patterns</span></div><div class='p-2.5 bg-slate-100 rounded-lg border'>⓶ 2 Fingers<br><span class='text-teal-700 font-semibold'>Rules</span></div><div class='p-2.5 bg-slate-100 rounded-lg border'>⓷ 3 Fingers<br><span class='text-teal-700 font-semibold'>Language</span></div><div class='p-2.5 bg-slate-100 rounded-lg border'>⓸ 4 Fingers<br><span class='text-teal-700 font-semibold'>Disciplines</span></div></div>",
+          note: "<strong>CAMERA GESTURES:</strong><br>SAY: \"We are going to use our Four Finger Scale on webcam. Look at the example problem from the curriculum and determine which Depth and Complexity icon would apply. Once again, wait to show me your gesture until I say 'Three, two, one… show me.' Let’s practice. Show me patterns [1]. Show me rules [2]. Show me language [3]. Show me disciplines [4].\"",
+          act: {
+            type: "scale",
+            title: "🖐️ Practice the 4-Finger Scale",
+            prompt: "Test your digital 4-finger selection:",
+            opts: ["⓵ 1: Patterns", "⓶ 2: Rules", "⓷ 3: Language", "⓸ 4: Disciplines"],
+            feedback: "Scale locked in! We will use fingers 1–4 on webcam for the upcoming curriculum analysis slides."
+          }
+        },
+        {
+          title: "Icon Application: Patterns",
+          category: "Icon Analysis",
+          symbol: "🔍",
+          headline: "Curriculum Practice: Patterns",
+          subtext: "Reveals recurrence & structure",
+          body: "<div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-sm sm:text-base mb-2'>Prompt: “What pattern(s) can be revealed from this problem?”</div><p class='text-xs sm:text-sm text-slate-600'>Students analyze coordinate tables and equations to observe repeating behaviors and constant rates of growth.</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Look at the example. Which icon would apply? [wait a few seconds] Three, two, one… show me. [Wait for all participants to put up a gesture]. Exactly: Patterns! Notice the prompt: 'What pattern(s) can be revealed from this problem?'\"",
+          act: {
+            type: "scale",
+            title: "🔍 Icon Selector",
+            prompt: "Select the icon that matches this question:",
+            opts: ["⓵ 1: Patterns", "⓶ 2: Rules", "⓷ 3: Language", "⓸ 4: Disciplines"],
+            feedback: "Correct! The prompt explicitly targets recurring cycles and growth rates: Patterns (1)."
+          }
+        },
+        {
+          title: "Icon Application: Rules",
+          category: "Icon Analysis",
+          symbol: "📏",
+          headline: "Curriculum Practice: Rules",
+          subtext: "Governing laws & standards",
+          body: "<div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-sm sm:text-base mb-2'>Prompt: “What rule(s) can be established by reviewing the two responses?”</div><p class='text-xs sm:text-sm text-slate-600'>Students extract governing algebraic properties, formulas, and structural constraints that dictate why the mathematics works.</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Look at the example. Which icon would apply? [wait a few seconds] Three, two, one… show me. [Wait for all participants to put up a gesture]. Yes, Rules! Notice the accompanying question: 'What rule(s) can be established by reviewing the two responses?'\"",
+          act: {
+            type: "scale",
+            title: "🔍 Icon Selector",
+            prompt: "Select the icon that matches this question:",
+            opts: ["⓵ 1: Patterns", "⓶ 2: Rules", "⓷ 3: Language", "⓸ 4: Disciplines"],
+            feedback: "Spot on! Organizational constraints and structural governing standards point directly to Rules (2)."
+          }
+        },
+        {
+          title: "Icon Application: Language of Discipline",
+          category: "Icon Analysis",
+          symbol: "💬",
+          headline: "Curriculum Practice: Language of Discipline",
+          subtext: "Authentic content terms",
+          body: "<div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-sm sm:text-base mb-2'>Prompt: “How does this help students make connections with vocabulary?”</div><p class='text-xs sm:text-sm text-slate-600'>Students analyze discipline-specific math terms like unit rate, coefficient, and slope to articulate their reasoning precisely.</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Look at the example. Which icon would apply? [wait a few seconds] Three, two, one… show me. [Wait for gestures]. That's 3: Language of the Discipline! Notice how precise vocabulary helps students build rigorous connections.\"",
+          act: {
+            type: "scale",
+            title: "🔍 Icon Selector",
+            prompt: "Select the icon that matches this question:",
+            opts: ["⓵ 1: Patterns", "⓶ 2: Rules", "⓷ 3: Language", "⓸ 4: Disciplines"],
+            feedback: "Precise discipline-specific terminology empowers rigorous mathematical discourse: Language (3)."
+          }
+        },
+        {
+          title: "Icon Application: Across Disciplines",
+          category: "Icon Analysis",
+          symbol: "🌐",
+          headline: "Curriculum Practice: Across Disciplines",
+          subtext: "Cross-curricular connections",
+          body: "<div class='p-3 bg-blue-50 border-l-4 border-blue-600 font-semibold text-slate-800 text-sm sm:text-base mb-2'>Prompt: “How does this address extend across disciplines?”</div><p class='text-xs sm:text-sm text-slate-600'>Students connect linear mathematical models to science experiments, financial literacy, and architectural planning.</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"Look at the problem. Which icon could apply? Three, two, one… show me. [Wait for gestures]. Exactly: 4 for Across Disciplines! Notice how each icon had an accompanying question. The power of the icon is unlocked through the prompt.\"",
+          act: {
+            type: "scale",
+            title: "🔍 Icon Selector",
+            prompt: "Select the icon that matches this question:",
+            opts: ["⓵ 1: Patterns", "⓶ 2: Rules", "⓷ 3: Language", "⓸ 4: Disciplines"],
+            feedback: "Connecting math models to real-world systems and sciences exemplifies Across Disciplines (4)."
+          }
+        },
+        {
+          title: "Model Lesson Reflection: Turn & Talk",
+          category: "Virtual Breakout",
+          symbol: "🗣️",
+          headline: "Virtual Turn & Talk (Breakout Rooms)",
+          subtext: "4 Minutes • Breakout Pairs",
+          body: "<p class='mb-2'>Discuss with your neighbor any areas of opportunities within the model lesson where the Depth &amp; Complexity icons could be used.</p><div class='p-3 bg-teal-50 border border-teal-200 rounded-xl text-xs sm:text-sm text-teal-900'><strong>Breakout Pair Routine:</strong> Identify 1 specific task in the Q2 model lesson where an icon prompt would unlock higher-level student thinking.</div>",
+          note: "<strong>BREAKOUT INSTRUCTIONS:</strong><br>SAY: \"[Read the slide] I am opening breakout rooms for 4 minutes. Discuss with your partner specific opportunities in our Quarter 2 model lesson where these icons naturally elevate student thinking. Be prepared to share one concrete opportunity when we return.\"",
+          act: {
+            type: "text",
+            title: "💬 Breakout Discussion Log",
+            prompt: "Log the model lesson opportunity you and your partner identified:",
+            btnText: "Save Discussion Point",
+            feedback: "Recorded! Be prepared to share this concrete opportunity when breakout rooms close."
+          }
+        },
+        {
+          title: "Depth & Complexity Differentiation: DOs & DON'Ts",
+          category: "Best Practices",
+          symbol: "⚖️",
+          headline: "Best Practices for Implementation",
+          subtext: "Ensuring equity, clarity, and impact",
+          body: "<div class='grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm'>\
+                  <div class='p-3 bg-teal-50 border border-teal-200 rounded-xl'>\
+                    <h4 class='font-bold text-teal-800 mb-2'>DOs</h4>\
+                    <ul class='space-y-1 text-slate-700 list-disc list-inside'>\
+                      <li>✔ Do introduce icons gradually</li>\
+                      <li>✔ Do start with familiar topics</li>\
+                      <li>✔ Do emphasize the thinking</li>\
+                      <li>✔ Do allow for voice &amp; choice</li>\
+                      <li>✔ Do combine icons</li>\
+                      <li>✔ Do make them tangible</li>\
+                    </ul>\
+                  </div>\
+                  <div class='p-3 bg-rose-50 border border-rose-200 rounded-xl'>\
+                    <h4 class='font-bold text-rose-800 mb-2'>DON'Ts</h4>\
+                    <ul class='space-y-1 text-slate-700 list-disc list-inside'>\
+                      <li>✖ Don’t ignore the “why”</li>\
+                      <li>✖ Don’t just use them for gifted learners</li>\
+                      <li>✖ Don’t rely solely on them</li>\
+                      <li>✖ Don’t forget to teach the vocabulary</li>\
+                      <li>✖ Don’t use overly complicated content at first</li>\
+                    </ul>\
+                  </div>\
+                </div>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"[Read the slide] Take special note of 'Don't just use them for gifted learners.' Depth and complexity prompts offer access and rigorous entry points for all students. In chat, type the one DO or DON'T you will share with your PLC.\"",
+          act: {
+            type: "choice",
+            title: "🎯 Practice Check",
+            prompt: "Is this a DO or a DON'T: 'Only reserve icons for students identified as gifted'?",
+            opts: ["DO", "DON'T"],
+            feedback: "Correct! That is a crucial DON'T. Depth & Complexity prompts provide differentiation and access for ALL learners."
+          }
+        },
+        {
+          title: "Carnegie Exploration • CBLI Strategy: Make Your Mark",
+          category: "Hands-on Practice",
+          symbol: "📌",
+          headline: "CBLI Strategy: Make Your Mark",
+          subtext: "Assigned icon Carnegie HQIM search",
+          body: "<p class='mb-2'><strong>Scan the Carnegie Lesson:</strong> Using a dry-erase marker (or digital highlighter), find and mark all the sections within the lesson that have opportunities to explore your assigned icon.</p><p class='text-amber-700 font-semibold text-xs sm:text-sm mb-1'>Recall your assigned number from earlier (check the top header badge):</p><p class='text-xs text-slate-600'>1: Patterns | 2: Rules | 3: Language | 4: Disciplines</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>SAY: \"[Read the slide] Recall your number from earlier. You are responsible for the icon with your number. Be prepared to share your findings with your team in our virtual chat.\"",
+          act: {
+            type: "text",
+            title: "📌 Record Your Spottings",
+            prompt: "Enter Carnegie page numbers and task problems where your assigned icon fits:",
+            btnText: "Log Spottings",
+            feedback: "Logged! You are ready to share your findings with your grade-level team."
+          }
+        },
+        {
+          title: "Benefits of Depth and Complexity Icons",
+          category: "Student Growth",
+          symbol: "🌟",
+          headline: "Student Growth & Expert Inquiry",
+          subtext: "Why Sandra Kaplan designed these prompts",
+          body: "<ul class='space-y-2 list-disc list-inside text-sm sm:text-base text-slate-700'>\
+                  <li>Encourage learners to generate ideas and explore novel mathematical pathways</li>\
+                  <li>Guide learners to explicitly search for deep answers at sophisticated cognitive levels</li>\
+                  <li>Foster independence where students are in charge of their learning</li>\
+                  <li>Direct students to approach topics the way an expert in that field would</li>\
+                  <li>Steer students toward meaningful information (limits superficial information)</li>\
+                </ul>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>NOTE: [Refer to the Depth and Complexity Icon posters] SAY: \"[Read the slide] These benefits summarize why Sandra Kaplan designed these prompts: they empower students to approach topics as discipline experts.\"",
+          act: null
+        },
+        {
+          title: "Depth and Complexity Reflection • CBLI: 4 Corners",
+          category: "CBLI: 4 Corners",
+          symbol: "🚶",
+          headline: "Reflection & Breakout Matchmaking",
+          subtext: "Virtual 4 Corners routine",
+          body: "<p class='mb-2'>Select the phrase that best represents your view on incorporating depth and complexity icons into your instruction:</p>\
+                <ol class='list-decimal list-inside space-y-1.5 text-sm text-slate-700 mb-3'>\
+                  <li>“I already provide opportunities to do this”</li>\
+                  <li>“I can easily include opportunities to do this”</li>\
+                  <li>“This will take some planning”</li>\
+                  <li>“I am not sure how to provide this… yet”</li>\
+                </ol>\
+                <p class='text-xs text-teal-800 font-semibold'>Virtual Action: Type your number (①, ②, ③, or ④) in the chat or click your corner below.</p>",
+          note: "<strong>FACILITATOR SCRIPT:</strong><br>STRATEGY: Four corners (Virtual Edition). SAY: \"Let's move and reflect. Type your corner number in the chat or stamp the screen. Look at the statements on the screen. [Wait 3 minutes]. Combine groups: Groups 1 and 4 combine—allow members from Group 1 to explain how they are already incorporating depth and complexity. Groups 2 and 3 combine—allow members from Group 2 to explain where they could include opportunities. [Wait 3 more minutes].\"",
+          act: {
+            type: "choice",
+            title: "🚶 4 Corners Alignment",
+            prompt: "Select your corner to reveal your Phase 2 discussion matchup:",
+            opts: ["① Already do this", "② Easily include", "③ Takes planning", "④ Not sure yet"],
+            feedback: "Phase 2 Matchup: If you chose ① or ④, combine together! If you chose ② or ③, combine together to share actionable planning steps."
+          }
+        },
+        {
+          title: "Session Conclusion & Thank You!",
+          category: "Closing",
+          symbol: "🎉",
+          headline: "Thank You, Dallas ISD Educators!",
+          subtext: "Curriculum & Instruction Mathematics Virtual Training",
+          body: "<div class='text-center py-6'><p class='text-lg font-bold text-[#003366] mb-2'>Thank you for exploring the depth and complexity of our curriculum with us!</p><p class='text-sm text-slate-500 mb-6'>Keep prompting your mathematicians with patterns, rules, authentic language, and cross-disciplinary connections.</p><button id='btn-direct-close' type='button' class='px-6 py-3 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-xl text-sm shadow-md transition inline-flex items-center gap-2'><span>Record Attendance &amp; Complete Exit Ticket →</span></button></div>",
+          note: "<strong>CLOSING EXIT NOTE:</strong><br>SAY: \"Thank you for exploring with us the depth and complexity of our curriculum. Please complete the quick virtual exit ticket in the chat and have a wonderful planning period!\"",
+          act: null
+        },
+        {
+          title: "Image Sources & Attribution",
+          category: "References",
+          symbol: "📚",
+          headline: "Curriculum Resources & Image Sources",
+          subtext: "Dallas ISD Mathematics & Depth and Complexity references",
+          body: "<div class='space-y-3 text-xs sm:text-sm text-slate-600 text-left bg-slate-50 p-4 rounded-xl border border-slate-200'>\
+                  <div><strong>Depth &amp; Complexity Icons Reference:</strong><br><span class='text-teal-700 font-mono text-xs'>giftedguru.com (Original Depth and Complexity Icons)</span></div>\
+                  <div><strong>Carnegie Learning HQIM Support:</strong><br><span class='text-teal-700 font-mono text-xs'>support.carnegielearning.com</span></div>\
+                  <div><strong>Kaplan Icons of Depth &amp; Complexity:</strong><br><span class='text-teal-700 font-mono text-xs'>giftedguru.com (The icons of Depth and Complexity)</span></div>\
+                </div>",
+          note: "Reference slide listing verified pedagogical and curriculum sources.",
+          act: null
+        }
+      ];
+
+      // Assign Random Icon Badge on Launch
+      assignedIcon = icons[Math.floor(Math.random() * icons.length)];
+      const badgeText = document.getElementById("badge-icon-text");
+      if (badgeText) badgeText.innerText = `Assigned: ${assignedIcon}`;
+
+      // Toast notification helper
+      function showToast(msg) {
+        const toast = document.getElementById("toast-box");
+        const txt = document.getElementById("toast-text");
+        txt.innerText = msg;
+        toast.classList.remove("translate-y-16", "opacity-0");
+        setTimeout(() => {
+          toast.classList.add("translate-y-16", "opacity-0");
+        }, 2500);
+      }
+
+      // View Transitions
+      const viewWelcome = document.getElementById("view-welcome");
+      const viewDeck = document.getElementById("view-deck");
+      const viewClosing = document.getElementById("view-closing");
+      const btnStart = document.getElementById("btn-start");
+      const btnPrev = document.getElementById("btn-prev");
+      const btnNext = document.getElementById("btn-next");
+
+      function openClosingView() {
+        viewDeck.classList.add("hidden");
+        viewClosing.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      btnStart.addEventListener("click", function () {
+        viewWelcome.classList.add("hidden");
+        viewDeck.classList.remove("hidden");
+        renderSlide();
+      });
+
+      btnPrev.addEventListener("click", function () {
+        if (currentSlide > 0) {
+          currentSlide--;
+          renderSlide();
+        }
+      });
+
+      btnNext.addEventListener("click", function () {
+        if (currentSlide < deck.length - 1) {
+          currentSlide++;
+          renderSlide();
+        } else if (currentSlide === deck.length - 1) {
+          openClosingView();
+        }
+      });
+
+      // Closing View logic & attendance capture
+      const btnSubmitClosing = document.getElementById("btn-submit-closing");
+      const closingErrorMsg = document.getElementById("closing-error-msg");
+      const closingFormCard = document.getElementById("closing-form-card");
+      const closingSuccessCard = document.getElementById("closing-success-card");
+      let registeredAttendee = null;
+
+      btnSubmitClosing.addEventListener("click", function () {
+        const nameVal = document.getElementById("close-name").value.trim();
+        const emailVal = document.getElementById("close-email").value.trim();
+        const campusVal = document.getElementById("close-campus").value.trim() || "Not Specified";
+
+        closingErrorMsg.classList.add("hidden");
+
+        if (!nameVal || !emailVal) {
+          closingErrorMsg.innerText = "Please enter both your Full Name and Dallas ISD Email Address.";
+          closingErrorMsg.classList.remove("hidden");
+          return;
+        }
+
+        if (!emailVal.includes("@")) {
+          closingErrorMsg.innerText = "Please enter a valid email address.";
+          closingErrorMsg.classList.remove("hidden");
+          return;
+        }
+
+        const record = {
+          name: nameVal,
+          email: emailVal,
+          campus: campusVal,
+          assignedIcon: assignedIcon,
+          timestamp: new Date().toLocaleString()
+        };
+
+        registeredAttendee = record;
+
+        try {
+          const stored = JSON.parse(localStorage.getItem("disd_virtual_attendance") || "[]");
+          stored.push(record);
+          localStorage.setItem("disd_virtual_attendance", JSON.stringify(stored));
+        } catch (e) {}
+
+        document.getElementById("recap-name").innerText = record.name;
+        document.getElementById("recap-email").innerText = record.email;
+        document.getElementById("recap-campus").innerText = record.campus;
+        document.getElementById("recap-icon").innerText = record.assignedIcon;
+        document.getElementById("recap-timestamp").innerText = record.timestamp;
+
+        closingFormCard.classList.add("hidden");
+        closingSuccessCard.classList.remove("hidden");
+        showToast("Attendance successfully documented!");
+      });
+
+      // Download Verification Slip
+      document.getElementById("btn-download-slip").addEventListener("click", function () {
+        if (!registeredAttendee) return;
+        const slipText = `DALLAS ISD DEPTH & COMPLEXITY VIRTUAL TEACHER TRAINING\n` +
+          `PROFESSIONAL DEVELOPMENT COMPLETION SLIP\n` +
+          `==========================================\n` +
+          `Participant: ${registeredAttendee.name}\n` +
+          `Email: ${registeredAttendee.email}\n` +
+          `Campus: ${registeredAttendee.campus}\n` +
+          `Assigned Lens: ${registeredAttendee.assignedIcon}\n` +
+          `Date & Time: ${registeredAttendee.timestamp}\n` +
+          `Session: Integrating Depth & Complexity into Q2 Math & Carnegie HQIM\n` +
+          `==========================================\n` +
+          `Dallas Independent School District • Mathematics Curriculum & Instruction`;
+
+        const blob = new Blob([slipText], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `DISD_Virtual_Attendance_${registeredAttendee.name.replace(/[^a-zA-Z0-9]/g, "_")}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Export CSV
+      document.getElementById("btn-export-all").addEventListener("click", function () {
+        let records = [];
+        try {
+          records = JSON.parse(localStorage.getItem("disd_virtual_attendance") || "[]");
+        } catch (e) {
+          records = registeredAttendee ? [registeredAttendee] : [];
+        }
+
+        if (records.length === 0 && registeredAttendee) {
+          records = [registeredAttendee];
+        }
+
+        if (records.length === 0) {
+          showToast("No attendance records to export yet.");
+          return;
+        }
+
+        let csv = "Name,Email,Campus,Assigned_Icon,Timestamp\n";
+        records.forEach(r => {
+          csv += `"${r.name}","${r.email}","${r.campus}","${r.assignedIcon}","${r.timestamp}"\n`;
+        });
+
+        const blob = new Blob([csv], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `DISD_Virtual_Attendance_${new Date().toISOString().slice(0, 10)}.csv`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Reset / Restart
+      document.getElementById("btn-restart-session").addEventListener("click", function () {
+        viewClosing.classList.add("hidden");
+        viewWelcome.classList.remove("hidden");
+        currentSlide = 0;
+        closingFormCard.classList.remove("hidden");
+        closingSuccessCard.classList.add("hidden");
+        document.getElementById("close-name").value = "";
+        document.getElementById("close-email").value = "";
+        document.getElementById("close-campus").value = "";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Keyboard arrow navigation
+      window.addEventListener("keydown", function (e) {
+        if (viewDeck.classList.contains("hidden")) return;
+        if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return;
+        if (e.key === "ArrowRight" && currentSlide < deck.length - 1) {
+          currentSlide++;
+          renderSlide();
+        } else if (e.key === "ArrowLeft" && currentSlide > 0) {
+          currentSlide--;
+          renderSlide();
+        }
+      });
+
+      function renderSlide() {
+        const slide = deck[currentSlide];
+
+        document.getElementById("slide-title").innerText = slide.title;
+        document.getElementById("slide-progress").innerText = `Slide ${currentSlide + 1} of ${deck.length}`;
+        document.getElementById("slide-category").innerText = slide.category;
+        document.getElementById("graphic-icon-box").innerText = slide.symbol;
+        document.getElementById("graphic-headline").innerText = slide.headline;
+        document.getElementById("graphic-subtext").innerText = slide.subtext;
+        document.getElementById("slide-body-content").innerHTML = slide.body;
+        document.getElementById("slide-note-content").innerHTML = slide.note;
+
+        // Image Handling with Fail-Safe Fallback
+        const imgElem = document.getElementById("slide-image");
+        const graphicCard = document.getElementById("slide-graphic-card");
+
+        const targetSrc = `images/slide${currentSlide + 1}.png`;
+
+        const testImg = new Image();
+        testImg.onload = function () {
+          imgElem.src = targetSrc;
+          imgElem.classList.remove("hidden");
+          graphicCard.classList.add("hidden");
+        };
+        testImg.onerror = function () {
+          imgElem.classList.add("hidden");
+          graphicCard.classList.remove("hidden");
+        };
+        testImg.src = targetSrc;
+
+        // Activity Checkpoint Controls
+        const actBox = document.getElementById("activity-container");
+        const actTitle = document.getElementById("activity-title");
+        const actPrompt = document.getElementById("activity-prompt");
+        const actControls = document.getElementById("activity-controls");
+        const actFeedback = document.getElementById("activity-feedback");
+
+        actFeedback.classList.add("hidden");
+        actFeedback.innerText = "";
+        actControls.innerHTML = "";
+
+        if (slide.act) {
+          actBox.classList.remove("hidden");
+          actTitle.innerText = slide.act.title;
+          actPrompt.innerText = slide.act.prompt;
+
+          if (slide.act.type === "text") {
+            actControls.innerHTML = `
+              <textarea class="w-full p-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm font-sans resize-y min-h-[75px]" placeholder="Type your virtual response or notes here..."></textarea>
+              <button type="button" class="px-5 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-semibold transition active:scale-[0.98]">
+                ${slide.act.btnText || "Submit Note"}
+              </button>
+            `;
+            const submitBtn = actControls.querySelector("button");
+            const textarea = actControls.querySelector("textarea");
+
+            submitBtn.addEventListener("click", function () {
+              if (!textarea.value.trim()) {
+                showToast("Please enter a response first!");
+                return;
+              }
+              actFeedback.innerText = slide.act.feedback;
+              actFeedback.classList.remove("hidden");
+              showToast("Response recorded!");
+            });
+
+          } else if (slide.act.type === "choice" || slide.act.type === "scale") {
+            const grid = document.createElement("div");
+            grid.className = "grid grid-cols-2 sm:grid-cols-4 gap-2";
+
+            slide.act.opts.forEach(opt => {
+              const optBtn = document.createElement("button");
+              optBtn.type = "button";
+              optBtn.className = "p-2.5 sm:p-3 rounded-xl border border-slate-300 bg-white hover:border-teal-500 hover:bg-teal-50/50 text-slate-800 font-semibold text-xs sm:text-sm transition text-center shadow-sm";
+              optBtn.innerText = opt;
+
+              optBtn.addEventListener("click", function () {
+                grid.querySelectorAll("button").forEach(b => {
+                  b.classList.remove("border-teal-600", "bg-teal-600", "text-white");
+                  b.classList.add("bg-white", "text-slate-800");
+                });
+                optBtn.classList.remove("bg-white", "text-slate-800");
+                optBtn.classList.add("border-teal-600", "bg-teal-600", "text-white");
+
+                actFeedback.innerText = slide.act.feedback;
+                actFeedback.classList.remove("hidden");
+                showToast("Selection recorded!");
+              });
+
+              grid.appendChild(optBtn);
+            });
+
+            actControls.appendChild(grid);
+          }
+        } else {
+          actBox.classList.add("hidden");
+        }
+
+        // Navigation button updates
+        btnPrev.disabled = currentSlide === 0;
+        
+        if (currentSlide === deck.length - 1) {
+          btnNext.disabled = false;
+          btnNext.innerHTML = "Complete Session &amp; Sign Out →";
+          btnNext.classList.remove("bg-[#003366]");
+          btnNext.classList.add("bg-teal-700", "hover:bg-teal-800");
+
+          const directCloseBtn = document.getElementById("btn-direct-close");
+          if (directCloseBtn) {
+            directCloseBtn.addEventListener("click", openClosingView);
+          }
+        } else {
+          btnNext.disabled = false;
+          btnNext.innerHTML = "Next Slide →";
+          btnNext.classList.remove("bg-teal-700", "hover:bg-teal-800");
+          btnNext.classList.add("bg-[#003366]");
+        }
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  </script>
+</body>
+</html>
